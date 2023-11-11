@@ -26,3 +26,9 @@ jobs:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: python collect.py
+    - name: Commit and Push changes
+      uses: EndBug/add-and-commit@v9
+      with:
+        add: 'all.md'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
