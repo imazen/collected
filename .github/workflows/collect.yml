@@ -1,8 +1,12 @@
 name: Generate Documentation
 
 on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
   repository_dispatch:
-    types: [documentation_trigger]
+    types: [collect]
 
 jobs:
   build:
